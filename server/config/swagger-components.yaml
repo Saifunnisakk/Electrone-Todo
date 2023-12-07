@@ -1,0 +1,37 @@
+components:
+  schemas:
+    GeneralError:
+      type: object
+      properties:
+        data:
+          type: any
+        error:
+          type: string
+      example:
+        data: null
+        error: something went wrong.
+    BadRequestError:
+      type: object
+      properties:
+        data:
+          type: any
+        error:
+          type: string
+    Todo:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Type of the task (personal, work, shopping, other)
+          enum: ['personal', 'work', 'shopping', 'other']
+          example: 'work'
+        title:
+          type: string
+          description: Title of the task
+          example: 'Complete assignment'
+        status:
+          type: string
+          description: Status of the task (todo, in-progress, done)
+          enum: ['todo', 'in-progress', 'done']
+          default: 'todo'
+          example: 'in-progress'
